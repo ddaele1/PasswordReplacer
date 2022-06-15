@@ -5,4 +5,4 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance force	
 #NoTrayIcon
 
-::mpass::Epsilon29992
+:*:mpass::Epsilon29992
