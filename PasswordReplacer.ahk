@@ -13,11 +13,26 @@ SetPassword()
 	MsgBox, Je huidig ww is opgeslagen.
 }
 
+; Haal het passwoord uit de ini file
+GetPassword()
+{
+	IniRead, readPass, PRSettings.ini, settings, ww
+	return %readPass%
+}
+
 ::setpass::
 SetPassword()
 return
 
 :*:mpass::
-pass := "Epsilon29992"
-SendInput %pass%
-return
+if !FileExist("PRSettings.ini")
+{
+	MsgBox, Er is geen wachtwoord opgeslagen. Tik setpass + enter in om er een aan te maken.
+	return
+}
+else
+{
+ pass := GetPassword()
+ SendInput %pass%
+ return
+ }
