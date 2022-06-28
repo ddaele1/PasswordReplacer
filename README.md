@@ -1,2 +1,2 @@
 # PasswordReplacer
- verander mpass in het ww vande ini
+ verander mpass in het ww van de ini
