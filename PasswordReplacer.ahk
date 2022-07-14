@@ -13,12 +13,31 @@ SetPassword()
 	MsgBox, Je huidig ww is opgeslagen.
 }
 
-; Haal het passwoord uit de ini file
+; Lees het passwoord uit de ini file
 GetPassword()
 {
 	IniRead, readPass, PRSettings.ini, settings, ww
 	return %readPass%
 }
+
+; Plaats gebuiker in een ini file
+SetUser()
+{
+	InputBox, newUser, Gebruikersnaam, Voer hier je gebruikersnaam in.
+	IniWrite, %newUser%, PRSettings.ini, settings, user
+	MsgBox, Je gebruikersnaam is opgeslagen.
+}
+
+; Lees de gebruiker uit de ini file
+GetUser()
+{
+	IniRead, readUser, PRSettings.ini, settings, user
+	return %readUser%
+}
+
+::setgeb::
+SetUser()
+return
 
 ::setpass::
 SetPassword()
@@ -35,4 +54,13 @@ else
  pass := GetPassword()
  SendInput %pass%
  return
- }
+}
+ 
+:*:mgeb::
+{
+user := GetUser()
+SendInput %user%
+return
+}
+
+ 
