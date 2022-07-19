@@ -21,7 +21,7 @@ GetPassword()
 }
 
 ; Plaats gebuiker in een ini file
-SetUser()
+SetUser1()
 {
 	InputBox, newUser, Gebruikersnaam, Voer hier je gebruikersnaam in.
 	IniWrite, %newUser%, PRSettings.ini, settings, user
@@ -35,8 +35,8 @@ GetUser()
 	return %readUser%
 }
 
-::setgeb::
-SetUser()
+::setuser::
+SetUser1()
 return
 
 ::setpass::
@@ -56,7 +56,7 @@ else
  return
 }
  
-:*:mgeb::
+:*:muser::
 {
 user := GetUser()
 SendInput %user%
