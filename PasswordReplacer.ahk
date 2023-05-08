@@ -52,7 +52,7 @@ if !FileExist("PRSettings.ini")
 else
 {
  pass := GetPassword()
- SendInput %pass%
+ SendRaw %pass%
  return
 }
  
